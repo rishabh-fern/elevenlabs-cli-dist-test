@@ -18,7 +18,13 @@ generations:
     cli_version: unknown
     generator_versions:
       fernapi/fern-cli-generator: 0.35.1
-current_generation: fc3fa5038b2c864206c923d2efb907b93b1b153b
+  - commit_sha: 825436983add40b0b4c7e07b86e169cef02592e5
+    tree_hash: 5e080140e68aeda26977037b9ec0196e0689a1ae
+    timestamp: 2026-08-21T03:27:45.952Z
+    cli_version: unknown
+    generator_versions:
+      fernapi/fern-cli-generator: 0.36.0
+current_generation: 825436983add40b0b4c7e07b86e169cef02592e5
 patches:
   - id: patch-8ae67df5
     content_hash: sha256:f5effc849cac807057fa84ffc217c23545e799063866767acab890f414747f30
@@ -27,7 +33,6 @@ patches:
     original_author: Rishabh Dhadda <rishabh.dhadda@postman.com>
     base_generation: 540fcacb3d2acd38a29870e68efc26defc5f11bc
     files:
-      - .github/workflows/release.yml
       - Cargo.lock
       - Cargo.toml
     patch_content: |+
@@ -4874,7 +4879,7 @@ patches:
     original_commit: a238f1e0e2b8745a7200af4176fa1d5c30b67431
     original_message: "chore: bump to 0.0.6 for release testing"
     original_author: Rishabh Dhadda <rishabh.dhadda@postman.com>
-    base_generation: fc3fa5038b2c864206c923d2efb907b93b1b153b
+    base_generation: 825436983add40b0b4c7e07b86e169cef02592e5
     files:
       - Cargo.lock
       - Cargo.toml
@@ -8493,3 +8498,4 @@ patches:
         tempfile = "3"
         wiremock = "0.6"
         tokio = { version = "1", features = ["full"] }
+    user_owned: true
