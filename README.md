@@ -1,5 +1,7 @@
 # ElevenLabs API Documentation CLI
 
+[![fern shield](https://img.shields.io/badge/%F0%9F%8C%BF-CLI%20generated%20by%20Fern-brightgreen)](https://buildwithfern.com?utm_source=github&utm_medium=github&utm_campaign=readme&utm_source=https%3A%2F%2Fgithub.com%2Frishabh-fern%2Felevenlabs-cli-dist-test)
+
 Command-line interface for the ElevenLabs API Documentation API.
 
 ## Table of contents
@@ -124,14 +126,19 @@ Standard environment variables (`HTTPS_PROXY` / `HTTP_PROXY` / `NO_PROXY` / `SSL
 
 ### Output formats
 
-Use the global `--format` flag to control output. Supported values: `json` (default), `table`, `yaml`, `csv`.
+Use the global `--format` flag to control output. Supported values: `json`, `table`, `yaml`, `csv`, `jsonl`, `raw`, `http`.
+
+Without `--format`, output (including errors) is `table` when stdout is a terminal and `json` when it is piped or redirected — so scripts and agents get JSON by default. Pass `--human` to keep the interactive rendering when piping to a pager, and `--format json` to pin JSON in a terminal.
 
 ```bash
 # Pipe JSON output through jq
 elevenlabs <resource> <method> --format json | jq
 
-# Machine-readable catalog of every operation
-elevenlabs --help --format json | jq 'length'
+# Keep the human rendering even when piped
+elevenlabs <resource> <method> --human | less
+
+# Machine-readable catalog of every operation (same as --schema)
+elevenlabs --help --format json | jq '.operations | length'
 ```
 
 ### Shell completion
